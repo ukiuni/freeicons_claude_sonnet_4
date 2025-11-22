@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Header.css';
 
 const Header = ({ totalIcons, filteredCount, searchQuery }) => {
@@ -21,6 +22,11 @@ const Header = ({ totalIcons, filteredCount, searchQuery }) => {
           )}
         </div>
       </div>
+      <nav className="header-nav">
+        <Link to="/terms" className="nav-link" data-testid="terms-link">
+          利用規約
+        </Link>
+      </nav>
     </header>
   );
 };

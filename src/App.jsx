@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import IconGrid from './components/IconGrid';
 import IconModal from './components/IconModal';
+import Terms from './components/Terms';
 import { useIconSearch } from './hooks/useIconSearch';
 import { usePagination } from './hooks/usePagination';
 import { loadIcons } from './utils/iconLoader';
 import './App.css';
 
-function App() {
+function Home() {
   const [icons, setIcons] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
@@ -84,6 +86,17 @@ function App() {
         />
       )}
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/terms" element={<Terms />} />
+      </Routes>
+    </Router>
   );
 }
 
