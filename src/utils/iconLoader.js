@@ -1,7 +1,7 @@
 // アイコンデータを読み込み
 export const loadIcons = async () => {
   try {
-    const response = await fetch('/freesvgicons/data/icons.json');
+    const response = await fetch('/data/icons.json');
     if (!response.ok) {
       throw new Error('Failed to load icons');
     }
